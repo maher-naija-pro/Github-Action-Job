@@ -1,22 +1,22 @@
 {
-  "name": "nodejs-api",
-  "version": "1.0.0",
-  "description": "A simple Node.js API",
-  "main": "app.js", 
-  "scripts": {
-    "start": "node app.js"
-    "test": "mocha test"
+  "name" : "nodejs-api",
+  "version" : "1.0.0",
+  "description" : "A simple Node.js API",
+  "main" : "app.js",
+  "scripts" : {
+    "start" : "node app.js",
+    "test" : "mocha test"
   },
-  "keywords": [],
-  "author": "Maher NAIJA",
-  "license": "MIT",
-  "deendencies": {
-    "express": "^4.17.1",
+  "keywords" : [],
+  "author" : "Maher NAIJA",
+  "license" : "MIT",
+  "deendencies" : {
+    "express" : "^4.17.1"
   },
-  "devDependencies": {
-    "chai": "^4.3.4", 
-    "chai-http": "^4.3.0",
-    "mocha": "^9.1.3" 
+  "devDependencies" : {
+    "chai" : "^4.3.4", 
+    "chai-http" : "^4.3.0",
+    "mocha" : "^9.1.3" 
   }
 }
 
