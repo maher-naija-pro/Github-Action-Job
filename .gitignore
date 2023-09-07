@@ -1,0 +1,37 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore npm's debug log file
+npm-debug.log
+
+# Ignore the build directory (if applicable)
+build/
+
+# Ignore any local development environment configuration files
+.env
+
+# Ignore log files
+logs/
+
+# Ignore OS or editor-specific files
+.DS_Store
+.vscode/
+*.swp
+Thumbs.db
+
+# Ignore compiled binary addons (if using any)
+/build/Release
+
+# Ignore package-lock files
+package-lock.json
+yarn.lock
+
+# Ignore .env files used for local configuration
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore .log files (you can customize this for your application)
+*.log
+
