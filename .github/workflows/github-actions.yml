@@ -1,14 +1,41 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: Build and Deploy Node.js API
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
 jobs:
-  check-bats-version:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # You can change this to your desired Node.js version
+
+    - name: Build Docker image
+      run: |
+        docker build -t mahernaija/nodejs-api:latest .
+      env:
+        DOCKER_BUILDKIT: 1
+
+    - name: Log in to Docker Hub
+      run: |
+        echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+      env:
+        DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+        DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+    - name: Push Docker image to Docker Hub
+      run: |
+        docker mahernaija/nodejs-api:latest
+
+    - name: Clean up
+      run: |
+        docker logout
 
