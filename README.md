@@ -2,4 +2,4 @@
 
 'mkdir .github/workflows/' 
 
-'vi .github/workflows/learn-github-actions.yml'
+'vi .github/workflows/github-actions.yml'
