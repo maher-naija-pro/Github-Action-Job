@@ -33,7 +33,7 @@ jobs:
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker mahernaija/nodejs-api:latest
+        docker push mahernaija/nodejs-api:latest
 
     - name: Clean up
       run: |
